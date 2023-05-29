@@ -45,6 +45,7 @@ namespace TourismApp
         private int TouristTBTNState = 0;
         private int ArchiveFilterSet = 0;
         private string TypeFilterSet = "Local";
+        private string UserID = "";
 
 
         // Places
@@ -619,7 +620,8 @@ namespace TourismApp
 
         private void updateVisitorHistory(string VisitorID)
         {
-            string txtquery = "INSERT into History (VisitorID, PlaceID, Time ) values ('" + VisitorID + "', '" + placeId.Text + "', '" + DateTime.Now + "')";
+            
+            string txtquery = "INSERT into History (VisitorID, PlaceID, Time ) values ('" + VisitorID + "', '" + int.Parse(placeId.Text) + "', '" + DateTime.Now + "')";
             InserIntoDB(txtquery);
         
         }
@@ -681,11 +683,11 @@ namespace TourismApp
                 Result result = barcodeReader.Decode((Bitmap)pictureBox2.Image);
                 if (result != null) {
                    
-                        placeId.Text = result.ToString();
+                    UserID = result.ToString();
                     BTNAllowEntry.Show();
-                    queryUserData(placeId.Text);
-                    generateQRView(placeId.Text);
-                    QueryHistoryViewDetails2(placeId.Text);
+                    queryUserData(UserID);
+                    generateQRView(UserID);
+                    QueryHistoryViewDetails2(UserID);
                         timer1.Stop();
                         stopDevice();
                     
@@ -719,7 +721,7 @@ namespace TourismApp
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            updateVisitorHistory(placeId.Text);
+            updateVisitorHistory(UserID);
             BTNAllowEntry.Hide();
             ViewuserDetailsQR.Image = null; ;
 
@@ -859,6 +861,11 @@ namespace TourismApp
         private void DGVRegisteredTourist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedTouristID = DGVRegisteredTourist.SelectedRows[0].Cells[0].Value.ToString();
+        }
+
+        private void placeId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

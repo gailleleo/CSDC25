@@ -212,6 +212,7 @@
             this.MenuRegTouristAll = new System.Windows.Forms.Label();
             this.MenuQRScanner = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label44 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel8.SuspendLayout();
             this.flowLayoutPanel9.SuspendLayout();
@@ -1064,7 +1065,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1100, 721);
+            this.tabPage2.Size = new System.Drawing.Size(1089, 721);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Place Registration";
             // 
@@ -1241,7 +1242,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1100, 721);
+            this.tabPage3.Size = new System.Drawing.Size(1089, 721);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Registered Tourist";
             // 
@@ -1338,7 +1339,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1100, 721);
+            this.tabPage4.Size = new System.Drawing.Size(1089, 721);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Tourist Profile";
             // 
@@ -1730,6 +1731,7 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.Silver;
+            this.tabPage5.Controls.Add(this.label44);
             this.tabPage5.Controls.Add(this.label40);
             this.tabPage5.Controls.Add(this.label36);
             this.tabPage5.Controls.Add(this.DGVViewUserDetails2);
@@ -1742,7 +1744,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1100, 721);
+            this.tabPage5.Size = new System.Drawing.Size(1089, 721);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Scan QR";
             // 
@@ -1750,7 +1752,7 @@
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(756, 316);
+            this.label40.Location = new System.Drawing.Point(756, 311);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(92, 25);
             this.label40.TabIndex = 28;
@@ -2134,7 +2136,7 @@
             this.ScanQR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ScanQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ScanQR.ForeColor = System.Drawing.Color.Transparent;
-            this.ScanQR.Location = new System.Drawing.Point(761, 522);
+            this.ScanQR.Location = new System.Drawing.Point(761, 579);
             this.ScanQR.Name = "ScanQR";
             this.ScanQR.Size = new System.Drawing.Size(250, 52);
             this.ScanQR.TabIndex = 14;
@@ -2144,24 +2146,25 @@
             // 
             // placeId
             // 
-            this.placeId.Location = new System.Drawing.Point(888, 496);
+            this.placeId.Location = new System.Drawing.Point(888, 547);
             this.placeId.Name = "placeId";
             this.placeId.Size = new System.Drawing.Size(123, 22);
             this.placeId.TabIndex = 3;
+            this.placeId.TextChanged += new System.EventHandler(this.placeId_TextChanged);
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(761, 495);
+            this.comboBox1.Location = new System.Drawing.Point(761, 546);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 1;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(761, 349);
+            this.pictureBox2.Location = new System.Drawing.Point(761, 336);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(250, 137);
+            this.pictureBox2.Size = new System.Drawing.Size(250, 190);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -2220,6 +2223,16 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(889, 529);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(94, 16);
+            this.label44.TabIndex = 29;
+            this.label44.Text = "Enter place ID:";
             // 
             // Dashboard
             // 
@@ -2541,5 +2554,6 @@
         private System.Windows.Forms.Button delUser;
         private System.Windows.Forms.Button delPlace;
         private System.Windows.Forms.Button edPlace;
+        private System.Windows.Forms.Label label44;
     }
 }
